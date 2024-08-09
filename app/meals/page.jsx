@@ -1,26 +1,27 @@
 import Link from "next/link";
 import React from "react";
+import classes from "./page.module.css";
+import MealsGrid from "@/components/meals/MealsGrid";
 
 const Meals = () => {
   return (
-    <main>
-      <h1>Meals</h1>
-      <p>
-        <Link href="/">Home</Link>
-      </p>
-      <p>
-        <Link href="/meals/share">Share Meals</Link>
-      </p>
-      <p>
-        <Link href="/community">Community</Link>
-      </p>
-      <p>
-        <Link href="/meals/first-post">First Post</Link>
-      </p>
-      <p>
-        <Link href="/meals/second-post">Second Post</Link>
-      </p>
-    </main>
+    <>
+      <header className={classes.header}>
+        <h1>
+          Delicious meals, created{" "}
+          <span className={classes.highlight}>by you</span>
+        </h1>
+        <p>
+          Choose your favorite recipe and cook it yourself. It is easy and fun!
+        </p>
+        <p className={classes.cta}>
+          <Link href="/meals/share">Share Your favorite Recipe</Link>
+        </p>
+      </header>
+      <main className={classes.main}>
+        <MealsGrid meals={[]} />
+      </main>
+    </>
   );
 };
 
