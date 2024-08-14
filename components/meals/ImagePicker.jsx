@@ -45,7 +45,7 @@ const ImagePicker = ({ label, name }) => {
           className={classes.input}
           type="file"
           id={name}
-          accept="image/png, image/jpg"
+          accept="image/png, image/jpeg"
           name={name}
           ref={imageInput}
           onChange={handleImageChange}
